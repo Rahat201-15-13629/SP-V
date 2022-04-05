@@ -1,18 +1,4 @@
-/*!
- * Lightbox v2.10.0
- * by Lokesh Dhakar
- *
- * More info:
- * http://lokeshdhakar.com/projects/lightbox2/
- *
- * Copyright 2007, 2018 Lokesh Dhakar
- * Released under the MIT license
- * https://github.com/lokesh/lightbox2/blob/master/LICENSE
- *
- * @preserve
- */
 
-// Uses Node, AMD or browser globals to create a module.
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -162,19 +148,7 @@
       return false;
     });
 
-    /*
-      Show context menu for image on right-click
-
-      There is a div containing the navigation that spans the entire image and lives above of it. If
-      you right-click, you are right clicking this div and not the image. This prevents users from
-      saving the image or using other context menu actions with the image.
-
-      To fix this, when we detect the right mouse button is pressed down, but not yet clicked, we
-      set pointer-events to none on the nav div. This is so that the upcoming right-click event on
-      the next mouseup will bubble down to the image. Once the right-click/contextmenu event occurs
-      we set the pointer events back to auto for the nav div so it can capture hover and left-click
-      events as usual.
-     */
+   
     this.$nav.on('mousedown', function(event) {
       if (event.which === 3) {
         self.$nav.css('pointer-events', 'none');
